@@ -78,7 +78,7 @@ class UmanitPhp_Sniffs_Commenting_TodoSniff implements PHP_CodeSniffer_Sniff
             }
 
             // @ prefix?
-            if ($comment[$todoPos-1] !== '@') {
+            if ($todoPos === 0 || $comment[$todoPos-1] !== '@') {
                 $fix = $phpcsFile->addFixableError(
                     'Todo is missing @ prefix',
                     $stackPtr,

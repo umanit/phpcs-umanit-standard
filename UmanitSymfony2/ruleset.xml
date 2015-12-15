@@ -25,5 +25,4 @@
     <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword">
         <severity>2</severity>
     </rule>
-    <rule ref="PEAR.Commenting.FunctionComment.MissingReturn" />
 </ruleset>
