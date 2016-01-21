@@ -5,6 +5,7 @@
     <rule ref="Symfony2">
         <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+        <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps" />
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
