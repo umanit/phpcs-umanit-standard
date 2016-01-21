@@ -120,27 +120,7 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
         $tokens      = $phpcsFile->getTokens();
         $varName     = ltrim($tokens[$stackPtr]['content'], '$');
         $memberProps = $phpcsFile->getMemberProperties($stackPtr);
-        $public      = ($memberProps['scope'] === 'public');
-
-        if ($public === true) {
-            if (substr($varName, 0, 1) === '_') {
-                $error = 'Public member variable "%s" must not contain a leading underscore';
-                $data  = array($varName);
-                $phpcsFile->addError($error, $stackPtr, 'PublicHasUnderscore', $data);
-                return;
-            }
-        } else {
-            if (substr($varName, 0, 1) !== '_') {
-                $scope = ucfirst($memberProps['scope']);
-                $error = '%s member variable "%s" must contain a leading underscore';
-                $data  = array(
-                          $scope,
-                          $varName,
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'PrivateNoUnderscore', $data);
-                return;
-            }
-        }
+        $public      = true;
 
         if (PHP_CodeSniffer::isCamelCaps($varName, false, $public, false) === false) {
             $error = 'Member variable "%s" is not in valid camel caps format';
