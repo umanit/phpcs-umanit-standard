@@ -1,43 +1,19 @@
 <?php
-/**
- * UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff.
- *
- * PHP version 5
- *
- * @category  PHP
- * @package   PHP_CodeSniffer
- * @author    Vincent GRAILLOT <vgraillot@umanit.fr>
- * @link      http://pear.php.net/package/PHP_CodeSniffer
- */
 
 if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
 }
 
 /**
- * UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff.
- *
- * Checks the naming of variables and member variables.
+ * This sniff checks the naming of variables and member variables.
  *
  * @category  PHP
  * @package   PHP_CodeSniffer
- * @author    Vincent GRAILLOT <vgraillot@umanit.fr>
+ * @author    Vincent Graillot <vgraillot@umanit.fr>
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
 {
-
-    /**
-     * Tokens to ignore so that we can find a DOUBLE_COLON.
-     *
-     * @var array
-     */
-    private $_ignore = array(
-                        T_WHITESPACE,
-                        T_COMMENT,
-                       );
-
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -53,19 +29,19 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
         $varName = ltrim($tokens[$stackPtr]['content'], '$');
 
         $phpReservedVars = array(
-                            '_SERVER',
-                            '_GET',
-                            '_POST',
-                            '_REQUEST',
-                            '_SESSION',
-                            '_ENV',
-                            '_COOKIE',
-                            '_FILES',
-                            'GLOBALS',
-                            'http_response_header',
-                            'HTTP_RAW_POST_DATA',
-                            'php_errormsg',
-                           );
+            '_SERVER',
+            '_GET',
+            '_POST',
+            '_REQUEST',
+            '_SESSION',
+            '_ENV',
+            '_COOKIE',
+            '_FILES',
+            'GLOBALS',
+            'http_response_header',
+            'HTTP_RAW_POST_DATA',
+            'php_errormsg',
+        );
 
         // If it's a php reserved var, then its ok.
         if (in_array($varName, $phpReservedVars) === true) {
@@ -96,9 +72,9 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
                         $data    = array($originalVarName);
                         $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
                     }
-                }//end if
-            }//end if
-        }//end if
+                }
+            }
+        }
 
         // There is no way for us to know if the var is public or private,
         // so we have to ignore a leading underscore if there is one and just
@@ -128,9 +104,7 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
             $data    = array($originalVarName);
             $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
         }
-
-    }//end processVariable()
-
+    }
 
     /**
      * Processes class member variables.
@@ -177,9 +151,7 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
             $data    = array($varName);
             $phpcsFile->addWarning($warning, $stackPtr, 'MemberVarContainsNumbers', $data);
         }
-
-    }//end processMemberVar()
-
+    }
 
     /**
      * Processes the variable found within a double quoted string.
@@ -195,19 +167,19 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
         $tokens = $phpcsFile->getTokens();
 
         $phpReservedVars = array(
-                            '_SERVER',
-                            '_GET',
-                            '_POST',
-                            '_REQUEST',
-                            '_SESSION',
-                            '_ENV',
-                            '_COOKIE',
-                            '_FILES',
-                            'GLOBALS',
-                            'http_response_header',
-                            'HTTP_RAW_POST_DATA',
-                            'php_errormsg',
-                           );
+            '_SERVER',
+            '_GET',
+            '_POST',
+            '_REQUEST',
+            '_SESSION',
+            '_ENV',
+            '_COOKIE',
+            '_FILES',
+            'GLOBALS',
+            'http_response_header',
+            'HTTP_RAW_POST_DATA',
+            'php_errormsg',
+        );
 
         if (preg_match_all('|[^\\\]\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)|', $tokens[$stackPtr]['content'], $matches) !== 0) {
             foreach ($matches[1] as $varName) {
@@ -225,10 +197,7 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
                     $data    = array($varName);
                     $phpcsFile->addWarning($warning, $stackPtr, 'StringVarContainsNumbers', $data);
                 }
-            }//end foreach
-        }//end if
-
-    }//end processVariableInString()
-
-
-}//end class
+            }
+        }
+    }
+}
