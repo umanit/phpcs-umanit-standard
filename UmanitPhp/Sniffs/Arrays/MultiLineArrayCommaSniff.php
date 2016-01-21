@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * This sniff prohibits the use of a comma at the beginning
