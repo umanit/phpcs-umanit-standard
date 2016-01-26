@@ -13,6 +13,7 @@
         <exclude name="Symfony2.Arrays.MultiLineArrayComma.Invalid" />
         <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamType" />
         <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamName" />
+        <exclude name="Symfony2.Functions.ScopeOrder.Invalid" />
     </rule>
     <rule ref="Symfony2.Commenting.ClassComment.Missing">
         <severity>4</severity>
