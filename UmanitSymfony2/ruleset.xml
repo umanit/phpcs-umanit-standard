@@ -9,6 +9,7 @@
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
+        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="Symfony2.Formatting.BlankLineBeforeReturn" />
         <exclude name="Symfony2.Arrays.MultiLineArrayComma.Invalid" />
         <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamType" />
