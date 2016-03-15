@@ -3,13 +3,14 @@
     <description>UmanIT coding standards for Symfony2</description>
     <rule ref="UmanitPhp" />
     <rule ref="Symfony2">
+        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
         <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps" />
+        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
-        <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="Symfony2.Formatting.BlankLineBeforeReturn" />
         <exclude name="Symfony2.Arrays.MultiLineArrayComma.Invalid" />
         <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamType" />
@@ -24,8 +25,5 @@
     </rule>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed">
         <severity>3</severity>
-    </rule>
-    <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword">
-        <severity>2</severity>
     </rule>
 </ruleset>
