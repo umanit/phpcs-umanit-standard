@@ -9,6 +9,7 @@
         <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps" />
         <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
+        <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonDEFAULT" />
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
         <exclude name="Symfony2.Formatting.BlankLineBeforeReturn" />
