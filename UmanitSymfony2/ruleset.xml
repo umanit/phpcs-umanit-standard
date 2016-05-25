@@ -6,6 +6,7 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
         <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen" />
         <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps" />
         <exclude name="PSR2.Methods.FunctionCallSignature.Indent" />
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
