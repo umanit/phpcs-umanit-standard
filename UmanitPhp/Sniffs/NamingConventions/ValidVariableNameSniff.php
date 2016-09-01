@@ -66,12 +66,6 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
                     if (substr($objVarName, 0, 1) === '_') {
                         $objVarName = substr($objVarName, 1);
                     }
-
-                    if (preg_match('|\d|', $objVarName) === 1) {
-                        $warning = 'Variable "%s" contains numbers but this is discouraged';
-                        $data    = array($originalVarName);
-                        $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
-                    }
                 }
             }
         }
@@ -99,10 +93,6 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
             $error = 'Variable "%s" is not in valid camel caps format';
             $data  = array($originalVarName);
             $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $data);
-        } else if (preg_match('|\d|', $varName) === 1) {
-            $warning = 'Variable "%s" contains numbers but this is discouraged';
-            $data    = array($originalVarName);
-            $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
         }
     }
 
@@ -126,10 +116,6 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
             $error = 'Member variable "%s" is not in valid camel caps format';
             $data  = array($varName);
             $phpcsFile->addError($error, $stackPtr, 'MemberVarNotCamelCaps', $data);
-        } else if (preg_match('|\d|', $varName) === 1) {
-            $warning = 'Member variable "%s" contains numbers but this is discouraged';
-            $data    = array($varName);
-            $phpcsFile->addWarning($warning, $stackPtr, 'MemberVarContainsNumbers', $data);
         }
     }
 
@@ -172,10 +158,6 @@ class UmanitPhp_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_Code
                     $error = 'Variable "%s" is not in valid camel caps format';
                     $data  = array($varName);
                     $phpcsFile->addError($error, $stackPtr, 'StringVarNotCamelCaps', $data);
-                } else if (preg_match('|\d|', $varName) === 1) {
-                    $warning = 'Variable "%s" contains numbers but this is discouraged';
-                    $data    = array($varName);
-                    $phpcsFile->addWarning($warning, $stackPtr, 'StringVarContainsNumbers', $data);
                 }
             }
         }
