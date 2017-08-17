@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<ruleset name="UmanIT Symfony2">
-    <description>UmanIT coding standards for Symfony2</description>
+<ruleset name="UmanIT Symfony">
+    <description>UmanIT coding standards for Symfony</description>
     <rule ref="UmanitPhp" />
-    <rule ref="Symfony2">
+    <rule ref="Symfony">
         <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
         <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
@@ -14,16 +14,22 @@
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonDEFAULT" />
         <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
-        <exclude name="Symfony2.Formatting.BlankLineBeforeReturn" />
-        <exclude name="Symfony2.Arrays.MultiLineArrayComma.Invalid" />
-        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamType" />
-        <exclude name="Symfony2.Commenting.FunctionComment.SpacingAfterParamName" />
-        <exclude name="Symfony2.Functions.ScopeOrder.Invalid" />
+        <exclude name="Symfony.Formatting.BlankLineBeforeReturn" />
+        <exclude name="Symfony.Arrays.MultiLineArrayComma.Invalid" />
+        <exclude name="Symfony.Commenting.Annotations.Invalid" />
+        <exclude name="Symfony.Commenting.FunctionComment.SpacingAfterParamType" />
+        <exclude name="Symfony.Commenting.FunctionComment.SpacingAfterParamName" />
+        <exclude name="Symfony.Commenting.License.Warning" />
+        <exclude name="Symfony.Functions.Arguments.Invalid" />
+        <exclude name="Symfony.Functions.ScopeOrder.Invalid" />
     </rule>
-    <rule ref="Symfony2.Commenting.ClassComment.Missing">
+    <rule ref="Symfony.Commenting.ClassComment.Missing">
         <severity>4</severity>
     </rule>
-    <rule ref="Symfony2.Commenting.FunctionComment.Missing">
+    <rule ref="Symfony.Commenting.FunctionComment.Missing">
+        <severity>4</severity>
+    </rule>
+    <rule ref="Symfony.ControlStructure.YodaConditions.Invalid">
         <severity>4</severity>
     </rule>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed">

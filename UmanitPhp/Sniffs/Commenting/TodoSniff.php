@@ -1,5 +1,7 @@
 <?php
 
+namespace UmanitPhp\Sniffs\Commenting;
+
 /**
  * This sniff establishes a convention for the todo keyword in comments.
  *
@@ -12,11 +14,11 @@
  * where ABC is the trigram of the developper who wrote it.
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   \PHP_CodeSniffer
  * @author    Vincent Robic <vrobic@umanit.fr>
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class UmanitPhp_Sniffs_Commenting_TodoSniff implements PHP_CodeSniffer_Sniff
+class UmanitPhpTodoSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 {
     /**
      * Returns the token types that this sniff is interested in.
@@ -36,13 +38,13 @@ class UmanitPhp_Sniffs_Commenting_TodoSniff implements PHP_CodeSniffer_Sniff
      *
      * @todo Handle multiple todos in a single comment token.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile  The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file where the token was found.
+     * @param int                         $stackPtr  The position in the stack where
+     *                                               the token was found.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         $token = $tokens[$stackPtr];

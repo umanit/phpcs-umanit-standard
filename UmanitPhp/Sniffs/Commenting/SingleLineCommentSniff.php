@@ -1,5 +1,7 @@
 <?php
 
+namespace UmanitPhp\Sniffs\Commenting;
+
 /**
  * This sniff forces the use of a space at the beginning
  * of a double slash single line comment.
@@ -17,11 +19,11 @@
  * </code>
  *
  * @category  PHP
- * @package   PHP_CodeSniffer
+ * @package   \PHP_CodeSniffer
  * @author    Vincent Robic <vrobic@umanit.fr>
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class UmanitPhp_Sniffs_Commenting_SingleLineCommentSniff implements PHP_CodeSniffer_Sniff
+class UmanitPhpSingleLineCommentSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 {
     /**
      * Returns the token types that this sniff is interested in.
@@ -38,13 +40,13 @@ class UmanitPhp_Sniffs_Commenting_SingleLineCommentSniff implements PHP_CodeSnif
     /**
      * Processes the tokens that this sniff is interested in.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
-     * @param int                  $stackPtr  The position in the stack where
-     *                                        the token was found.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file where the token was found.
+     * @param int                         $stackPtr  The position in the stack where
+     *                                               the token was found.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         $token = $tokens[$stackPtr];
