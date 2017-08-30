@@ -2,7 +2,9 @@
 <ruleset name="UmanIT WordPress">
     <description>UmanIT coding standards for WordPress</description>
     <rule ref="WordPress">
+        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="PSR2.ControlStructures.SwitchDeclaration.BodyOnNextLineCASE" />
         <exclude name="PSR2.Files.ClosingTag.NotAllowed" />
         <exclude name="Squiz.Commenting.BlockComment.NoNewLine" />
@@ -11,8 +13,13 @@
         <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
+        <exclude name="Squiz.PHP.EmbeddedPhp.MultipleStatements" />
+        <exclude name="Squiz.PHP.NonExecutableCode.Unreachable" />
         <exclude name="Squiz.Strings.DoubleQuoteUsage.NotRequired" />
+        <exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
+        <exclude name="WordPress.VIP.RestrictedFunctions" />
         <exclude name="WordPress.VIP.SuperGlobalInputUsage" />
         <exclude name="WordPress.VIP.ValidatedSanitizedInput" />
+        <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
     </rule>
 </ruleset>
